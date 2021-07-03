@@ -25,14 +25,11 @@ export const useChat = () => {
   const sendMessage = async (sentence) => {
     if (!isLogin) return;
 
-    const sendMessagePromise = await fetch(
-      "http://147.182.164.227:3000/v1/predictions",
-      {
-        method: "POST",
-        headers: new Headers({ "Content-Type": "application/json" }),
-        body: JSON.stringify({ sentence }),
-      }
-    );
+    const sendMessagePromise = await fetch(process.env.API_URL, {
+      method: "POST",
+      headers: new Headers({ "Content-Type": "application/json" }),
+      body: JSON.stringify({ sentence }),
+    });
 
     const res = await sendMessagePromise.json();
 
