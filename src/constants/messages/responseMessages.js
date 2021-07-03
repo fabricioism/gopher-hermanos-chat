@@ -105,7 +105,7 @@ const orderSodaMessages = [
   },
   {
     value:
-      "¡Gracias tu orden! 🥤, Esperamos disfrutes tu refresco. Pronto te llamaremos",
+      "¡Gracias por tu orden! 🥤, Esperamos disfrutes tu refresco. Pronto te llamaremos",
   },
   {
     value:

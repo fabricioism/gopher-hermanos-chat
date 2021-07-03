@@ -25,13 +25,15 @@ export const useChat = () => {
   const sendMessage = async (sentence) => {
     if (!isLogin) return;
 
-    const sendMessagePromise = await fetch(process.env.API_URL, {
+    const sendMessagePromise = await fetch(process.env.VUE_APP_API_URL, {
       method: "POST",
       headers: new Headers({ "Content-Type": "application/json" }),
       body: JSON.stringify({ sentence }),
     });
 
     const res = await sendMessagePromise.json();
+
+    console.log(`res`, res);
 
     const bagOfMessages = responseMessages[res.prediction];
 
