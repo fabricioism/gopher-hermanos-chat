@@ -36,8 +36,6 @@ export const useChat = () => {
 
     const res = await sendMessagePromise.json();
 
-    console.log(`res`, res);
-
     const bagOfMessages = responseMessages[res.prediction];
 
     const chosenMessageIndex =

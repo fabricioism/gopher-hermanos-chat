@@ -1,9 +1,9 @@
 <template>
   <div class="message">
     <span v-if="!sender">{{ name }}</span>
-    <div class="flex" :class="sender ? 'flex-row-reverse' : ''">
-      <Avatar class="mt-1" :src="photoUrl" />
-      <div class="text w-3/4" :class="sender ? 'bg-green-800' : 'bg-gray-700'">
+    <div style="display: flex" :style="sender ? 'flex-direction: row-reverse;' : ''">
+      <Avatar style="margin-top: 0.25rem;" :src="photoUrl" />
+      <div class="text" style="width: 75%;" :style="sender ? 'background-color: rgba(6, 95, 70, 1)' : 'background-color: rgba(55, 65, 81, 1)'">
         <slot />
       </div>
     </div>

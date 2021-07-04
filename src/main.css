@@ -15,6 +15,15 @@
   opacity: 0;
 }
 
+.margin-t-5 {
+  margin-top: 5rem;
+}
+
+.margin-x-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 nav {
   position: fixed;
   width: 100%;
@@ -28,14 +37,14 @@ nav {
 }
 
 nav > div {
-  @apply container;
-  @apply max-w-xl;
-  @apply flex;
-  @apply content-center;
-  @apply items-center;
-  @apply justify-between;
-  @apply h-16;
-  @apply px-4;
+  margin: 0 auto;
+  max-width: 36rem;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  padding: 1rem;
 }
 
 nav h1 {
@@ -50,7 +59,7 @@ nav h1 > strong {
 
 nav .login {
   right: 0px;
-  @apply flex;
+  display: flex;
   margin-left: auto;
 }
 
@@ -69,8 +78,29 @@ nav button {
 }
 
 .container-sm {
-  @apply container;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 36rem;
+
+  @media (min-width: 640px) {
+    max-width: 640px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+  }
 }
 
 .message {
@@ -95,7 +125,7 @@ nav button {
 }
 
 .bottom {
-  @apply fixed;
+  position: fixed;
   bottom: 0px;
   background-color: rgba(17, 24, 39, 1);
   --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -106,20 +136,19 @@ nav button {
 
 .bottom form {
   width: 100%;
-  @apply flex;
-  @apply justify-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .bottom form input {
-  @apply flex-grow;
-  @apply m-2;
-  @apply py-2;
-  @apply px-4;
-  @apply mr-1;
-  @apply rounded;
-  @apply border-none;
-  @apply bg-gray-700;
-  @apply text-white;
+  flex-grow: 1;
+  margin: 0.5rem;
+  padding: 1rem 0.5rem;
+  margin-right: 0.25rem;
+  border-radius: 0.25rem;
+  border-style: none;
+  background-color: rgba(55, 65, 81, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .icon-send {
@@ -129,6 +158,10 @@ nav button {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.icon-send :hover {
+  color: rgba(16, 185, 129, 1);
 }
 
 ::-webkit-scrollbar {

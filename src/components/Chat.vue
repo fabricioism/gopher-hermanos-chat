@@ -1,6 +1,6 @@
 <template>
-  <div class="container-sm mt-20">
-    <div class="mx-5" >
+  <div class="container-sm margin-t-5">
+    <div class="margin-x-5" >
       <Message
         v-for="{ id, text, userPhotoURL, userName, userId } in messages"
         :key="id"
@@ -12,7 +12,7 @@
       </Message>
     </div>
   </div>
-  <div ref="bottom" class="mt-20" />
+  <div ref="bottom margin-t-5" />
   <div class="bottom">
     <div class="container-sm">
       <form v-if="isLogin" @submit.prevent="send">
@@ -24,12 +24,12 @@
     </div>
   </div>
 </template>
+
 <script>
 import { ref, watch, nextTick } from 'vue'
 import { useAuth, useChat } from '@/bot'
 import SendIcon from './SendIcon.vue'
 import Message from './Message.vue'
-
 
 export default {
   components: { Message, SendIcon },
