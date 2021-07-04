@@ -6,7 +6,7 @@
       <div>
         <Avatar :src="user.photoURL" />
       </div>
-
+      
     </div>
   </nav>
 </template>
