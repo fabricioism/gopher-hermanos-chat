@@ -1,6 +1,5 @@
 import { ref } from "vue";
 import { responseMessages } from "./constants/messages/responseMessages";
-import { API_URL } from "./constants/api";
 
 const uid = "4HWBr3Mom4cmpxFIcG9Eyk1JOiC3";
 const displayName = "Fabricio Ismael Murillo";
