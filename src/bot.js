@@ -26,11 +26,14 @@ export const useChat = () => {
   const sendMessage = async (sentence) => {
     if (!isLogin) return;
 
-    const sendMessagePromise = await fetch(`${API_URL}/v1/predictions`, {
-      method: "POST",
-      headers: new Headers({ "Content-Type": "application/json" }),
-      body: JSON.stringify({ sentence }),
-    });
+    const sendMessagePromise = await fetch(
+      "gopher.fabricioism.com/v1/predictions",
+      {
+        method: "POST",
+        headers: new Headers({ "Content-Type": "application/json" }),
+        body: JSON.stringify({ sentence }),
+      }
+    );
 
     const res = await sendMessagePromise.json();
 
