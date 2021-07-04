@@ -1,30 +1,17 @@
 import { ref } from "vue";
 import { responseMessages } from "./constants/messages/responseMessages";
+import { profiles } from "./constants/data";
 
-const uid = "4HWBr3Mom4cmpxFIcG9Eyk1JOiC3";
-const displayName = "Fabricio Ismael Murillo";
-const photoURL = "https://avatars.githubusercontent.com/u/19640183?v=4";
+const { bot, client } = profiles;
 
-const botId = "wfdfsdfsdfd53453454";
-const botDisplayName = "Los Gophers Hermanos";
-const botPhotoURL =
-  "https://strapi-bucket-premper.s3.us-east-2.amazonaws.com/LOS_GOPHERS_26d18c62bd.png";
-
-export const useAuth = () => {
-  const isLogin = true;
-
-  const user = { uid, displayName, photoURL };
-
-  return { user, isLogin };
+export const useUser = () => {
+  return { user: client };
 };
 
 export const useChat = () => {
   const messages = ref([]);
-  const { isLogin } = useAuth();
 
   const sendMessage = async (sentence) => {
-    if (!isLogin) return;
-
     const sendMessagePromise = await fetch(
       "https://gopher.fabricioism.com/v1/predictions",
       {
@@ -48,18 +35,18 @@ export const useChat = () => {
           .toString(36)
           .substring(7),
         text: sentence,
-        userPhotoURL: photoURL,
-        userName: displayName,
-        userId: uid,
+        userPhotoURL: client.photoURL,
+        userName: client.displayName,
+        userId: client.uid,
       },
       {
         id: Math.random()
           .toString(36)
           .substring(7),
         text: bagOfMessages[chosenMessageIndex].value,
-        userPhotoURL: botPhotoURL,
-        userName: botDisplayName,
-        userId: botId,
+        userPhotoURL: bot.photoURL,
+        userName: bot.displayName,
+        userId: bot.uid,
       },
     ];
   };

@@ -13,12 +13,12 @@
 
 <script>
 import Avatar from './Avatar.vue'
-import { useAuth } from '@/bot'
+import {  useUser } from '@/bot'
 export default {
   components: { Avatar },
   setup() {
-    const { user, isLogin, signOut, signIn } = useAuth()
-    return { user, isLogin, signOut, signIn }
+    const { user } = useUser()
+    return { user}
   }
 }
 </script>
