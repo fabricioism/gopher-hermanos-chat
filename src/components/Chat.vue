@@ -15,7 +15,7 @@
   <div ref="bottom margin-t-5" />
   <div class="bottom">
     <div class="container-sm">
-      <form v-if="isLogin" @submit.prevent="send">
+      <form @submit.prevent="send">
         <input v-model="message" placeholder="Aa" required />
         <button type="submit">
           <SendIcon />
@@ -27,14 +27,14 @@
 
 <script>
 import { ref, watch, nextTick } from 'vue'
-import { useAuth, useChat } from '@/bot'
+import { useChat, useUser } from '@/bot'
 import SendIcon from './SendIcon.vue'
 import Message from './Message.vue'
 
 export default {
   components: { Message, SendIcon },
   setup() {
-    const { user, isLogin } = useAuth()
+    const { user } = useUser()
     const { messages, sendMessage } = useChat()
     const bottom = ref(null)
     watch(
@@ -51,7 +51,7 @@ export default {
       await sendMessage(message.value)
       message.value = ''
     }
-    return { user, isLogin, messages, bottom, message, send }
+    return { user,  messages, bottom, message, send }
   }
 }
 </script>
