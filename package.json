@@ -9,9 +9,6 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "glob-parent": "5.1.2",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue": "^3.0.0"
   },
   "devDependencies": {
