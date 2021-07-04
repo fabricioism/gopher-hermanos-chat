@@ -26,7 +26,7 @@ export const useChat = () => {
     if (!isLogin) return;
 
     const sendMessagePromise = await fetch(
-      "gopher.fabricioism.com/v1/predictions",
+      "https://gopher.fabricioism.com/v1/predictions",
       {
         method: "POST",
         headers: new Headers({ "Content-Type": "application/json" }),
