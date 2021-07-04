@@ -1,5 +1,6 @@
 import { ref } from "vue";
 import { responseMessages } from "./constants/messages/responseMessages";
+import { API_URL } from "./constants/api";
 
 const uid = "4HWBr3Mom4cmpxFIcG9Eyk1JOiC3";
 const displayName = "Fabricio Ismael Murillo";
@@ -25,7 +26,7 @@ export const useChat = () => {
   const sendMessage = async (sentence) => {
     if (!isLogin) return;
 
-    const sendMessagePromise = await fetch(process.env.VUE_APP_API_URL, {
+    const sendMessagePromise = await fetch(`${API_URL}/v1/predictions`, {
       method: "POST",
       headers: new Headers({ "Content-Type": "application/json" }),
       body: JSON.stringify({ sentence }),
